@@ -1,4 +1,4 @@
-package br.univel.trabalho;
+package br.univel.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package br.univel.trabalho;
+package br.univel.enums;
 
 public enum EstadoCivil {
 	SOLTEIRO, CASADO, VIUVO;

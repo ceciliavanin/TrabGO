@@ -1,7 +1,7 @@
 package br.univel.trabalho;
 
-import br.dagostini.enums.tipos.EstadoCivil;
-import br.univel.trabalho.Coluna;
+import br.univel.annotations.Coluna;
+import br.univel.enums.EstadoCivil;
 
 public class Cliente {
 
@@ -27,4 +27,5 @@ public static void main(String[] args) {
 		// utilizado para gravar no banco.
 		System.out.println(estadoCivil.ordinal());
 	}
+}
 }
