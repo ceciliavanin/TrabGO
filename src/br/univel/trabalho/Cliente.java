@@ -14,6 +14,8 @@ public class Cliente {
 	@Coluna(endereco="END")
 	private String endereco;
 
+
+
 public static void main(String[] args) {
 
 	// Enum simples.
