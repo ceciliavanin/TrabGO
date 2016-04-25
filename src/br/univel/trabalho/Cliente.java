@@ -1,6 +1,7 @@
 package br.univel.trabalho;
 
 import br.univel.enums.EstadoCivil;
+import br.univel.Cliente;
 import br.univel.annotations.Coluna;
 import br.univel.annotations.Tabela;
 
@@ -85,4 +86,57 @@ public class Cliente {
 		result = prime * result + ((estadocivil == null ) ? 0 : estadocivil.hashCode());
 		return result;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		
+		if (obj == null)
+			return false;
+		
+		if (getClass() != obj.getClass())
+			return false;
+		
+		Cliente other = (Cliente) obj;
+		
+		if (Cadid != other.Cadid)
+			return false;
+		
+		if (nomeCliente == null) {
+			if (other.nomeCliente != null)
+				return false;
+		} else if (!nomeCliente.equals(other.nomeCliente))
+			return false;
+		
+		if (end == null) {
+			if (other.end != null)
+				return false;
+		} else if (!end.equals(other.end))
+			return false;
+		
+		if (telefone == null) {
+			if (other.telefone != null)
+				return false;
+		} else if (!telefone.equals(other.telefone))
+			return false;
+		
+		if (estadocivil == null) {
+			if (other.estadocivil != null)
+				return false;
+		} else if (!estadocivil.equals(other.estadocivil))
+			return false;
+		
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [id=" + Cadid + ", nome=" + nomeCliente +", end=" + end + ", telefone="+ telefone + ", estadocivil" + estadocivil +"]";
+	}
+
+}
+
+
+
 }

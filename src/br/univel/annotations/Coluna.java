@@ -8,11 +8,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface Coluna {
-
+	
 	String nome() default "";
-
+	
+	int tamanho() default -1;
+	
 	boolean pk() default false;
-
-	String endereco() default "";
 
 }
