@@ -7,10 +7,9 @@ public abstract class SQLGen {
 
 		// DDL
 
-		protected abstract String getCreateTable(Connection con, Object obj) {
-		}
+		protected abstract String getCreateTable(Class<Cliente> cl);
 
-		protected abstract String getDropTable(Connection con, Object obj);
+		protected abstract String getDropTable(Class<Cliente> cl);
 
 		// DML
 
