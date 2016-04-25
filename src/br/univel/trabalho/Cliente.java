@@ -1,7 +1,6 @@
 package br.univel.trabalho;
 
 import br.univel.enums.EstadoCivil;
-import br.univel.Cliente;
 import br.univel.annotations.Coluna;
 import br.univel.annotations.Tabela;
 
@@ -20,13 +19,13 @@ public class Cliente {
 	private String telefone;
 	
 	@Coluna(nome="CadEstadoCivil")
-	private Estado_Civil estadocivil;
+	private EstadoCivil estadocivil;
 	
-	public Estado_Civil getEstadocivil() {
+	public EstadoCivil getEstadocivil() {
 		return estadocivil;
 	}
 
-	public void setEstadocivil(Estado_Civil estadocivil) {
+	public void setEstadocivil(EstadoCivil estadocivil) {
 		this.estadocivil = estadocivil;
 	}
 
@@ -66,7 +65,7 @@ public class Cliente {
 		this(0, null, null, null, null);
 	}
 
-	public Cliente(int id, String nome, String endereco, String telefone, Estado_Civil estCivil) {
+	public Cliente(int id, String nome, String endereco, String telefone, EstadoCivil estCivil) {
 		super();
 		this.Cadid = id;
 		this.nomeCliente = nome;
@@ -138,5 +137,3 @@ public class Cliente {
 }
 
 
-
-}
