@@ -12,17 +12,22 @@ import br.univel.annotations.Tabela;
 import br.univel.annotations.*;
 
 public class Montando extends SQLGen {
+	
+	
+	private Connection getConnection(){
+		return Conexao.getConnection();
+	}
 		
 		public Montando () {
 			String strCreateTable = getCreateTable(Cliente.class);
 			System.out.println(strCreateTable);
-			String strDropTable = getDropTable(Cliente.class);
-			System.out.println(strDropTable);
+			//String strDropTable = getDropTable(Cliente.class);
+//			System.out.println(strDropTable);
 			Cliente cliente = new Cliente(1, "Cecilia", "Rua Souza Naves", "45888888888", EstadoCivil.SOLTEIRO);
-			Connection con = null;
+			Connection con;
 
 			try {
-				con = new Conex();
+				con = Conexao.getConnection();
 				PreparedStatement ps = getSqlInsert(con, cliente);
 				ps.executeUpdate();
 				ps = getSqlSelectAll(con, cliente);
