@@ -18,9 +18,9 @@ public class Main {
         listaTodos();
         busca(1);
 
-        c1.setNomeCliente("Maria");
-        c1.setEnd("Avenida Flor de Lis");
-        c1.setTelefone("4532428907");
+        c1.setNomeCliente("VACA AMARELA");
+        c1.setEnd("CAGO NA PANELA");
+        c1.setTelefone("171717171");
         c1.setEstadoCivil(EstadoCivil.CASADO);
 
         atualiza(c1);
@@ -69,7 +69,7 @@ public class Main {
     }
     public void exclui(Integer id) {
         ImpDao dao = new ImpDao();
-        dao.excluir(1);
+        dao.excluir(2);
     }
 
     
@@ -84,7 +84,7 @@ public class Main {
             System.out.println("NOME: \t\t" + l.getNomeCliente());
             System.out.println("ENDERECO: \t" + l.getEnd());
             System.out.println("TELEFONE: \t" + l.getTelefone());
-            System.out.println("ESTADO CIVIL: \t\n" + l.getEstadocivil());
+            System.out.println("ESTADO CIVIL: \t" + l.getEstadocivil());
         }
     }
 

@@ -16,8 +16,6 @@ public class Conexao {
 
 	public static Connection getConnection() {
 
-		System.out.println("Iniciando conexão com o banco de dados");
-
 		try {
 			Class.forName(DRIVER_CLASS);
 			return DriverManager.getConnection(URL, USER, PASSWORD);

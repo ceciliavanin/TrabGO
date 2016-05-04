@@ -119,7 +119,6 @@ public class Montando extends SQLGen {
 			}
 
 			sb.append("\n);");
-			System.out.println(sb.toString());
 			return sb.toString();
 
 		} catch (SecurityException e) {
@@ -148,7 +147,6 @@ public class Montando extends SQLGen {
 
 				}
 				sb.append("DROP TABLE ").append(nomeTabela).append(";");
-			System.out.println(sb.toString());
 			return sb.toString();
 	} catch (SecurityException e) {
 		throw new RuntimeException(e);
@@ -244,7 +242,6 @@ public class Montando extends SQLGen {
 
 				}
 			}
-			System.out.println(ps);
 			return ps;
 
 
@@ -414,13 +411,12 @@ public class Montando extends SQLGen {
         }
         sb.append(" WHERE CADID = ").append(id);
         String update = sb.toString();
-        System.out.println(update);
 
         PreparedStatement ps = null;
 
         try {
             ps = con.prepareStatement(update);
-    		int res = ps.executeUpdate();
+    		//int res = ps.executeUpdate();
 
             for (int i = 0; i < atributos.length; i++) {
                 Field field = atributos[i];
@@ -468,7 +464,6 @@ public class Montando extends SQLGen {
 
             sb.append("DELETE FROM ").append(nometabela).append(" WHERE CADID = ").append(id).append(";");
             String exc = sb.toString();
-            System.out.println(exc);
 
             ps = con.prepareStatement(exc);
     		int res = ps.executeUpdate();

@@ -44,10 +44,10 @@ public class ImpDao implements Dao<Cliente, Integer> {
 	           resultado = ps.executeQuery();
 	           resultado.next();
 
-	           EstadoCivil estcivil = EstadoCivil.values()[resultado.getInt("ESTADOCIVIL")];
-	           c = new Cliente(resultado.getInt("id"), resultado.getString("nome"),
-	           		resultado.getString("endereco"), resultado.getString("telefone"), estcivil);
-
+	           EstadoCivil estcivil = EstadoCivil.values()[resultado.getInt("CadEstadoCivil")];
+	           c = (new Cliente(resultado.getInt("Cadid"), resultado.getString("Cadnome"),
+                       resultado.getString("CadEnd"), resultado.getString("CadTelefone"), estcivil));
+	           
 	           ps.close();
 	           resultado.close();
 	           con.close();
@@ -95,10 +95,10 @@ public class ImpDao implements Dao<Cliente, Integer> {
 	           resultado = ps.executeQuery();
 
 	           while (resultado.next()) {
-	               EstadoCivil estcivil = EstadoCivil.values()[resultado.getInt("CADESTADOCIVIL")];
+	               EstadoCivil estcivil = EstadoCivil.values()[resultado.getInt("CadEstadoCivil")];
 	               
-	               lista.add(new Cliente(resultado.getInt("id"), resultado.getString("nome"),
-	                       resultado.getString("endereco"), resultado.getString("telefone"), estcivil));
+	               lista.add(new Cliente(resultado.getInt("Cadid"), resultado.getString("Cadnome"),
+	                       resultado.getString("CadEnd"), resultado.getString("CadTelefone"), estcivil));
 	           }
 
 	           ps.close();
