@@ -1,0 +1,15 @@
+2016-05-03 20:46:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CADASTRO_CLIENTE" not found; SQL statement:
+INSERT INTO Cadastro_Cliente (CADID, CadNome, CadEnd, CadTelefone, CadEstadoCivil) VALUES (?, ?, ?, ?, ?) [42102-191]
+2016-05-03 20:55:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CADASTRO_CLIENTE" not found; SQL statement:
+INSERT INTO Cadastro_Cliente (CADID, CadNome, CadEnd, CadTelefone, CadEstadoCivil) VALUES (?, ?, ?, ?, ?) [42102-191]
+2016-05-03 21:04:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CADASTRO_CLIENTE" not found; SQL statement:
+INSERT INTO Cadastro_Cliente (CADID, CadNome, CadEnd, CadTelefone, CadEstadoCivil) VALUES (?, ?, ?, ?, ?) [42102-191]
+2016-05-03 21:08:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CADASTRO_CLIENTE" not found; SQL statement:
+INSERT INTO Cadastro_Cliente (CADID, CadNome, CadEnd, CadTelefone, CadEstadoCivil) VALUES (?, ?, ?, ?, ?) [42102-191]
+2016-05-03 21:09:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CADASTRO_CLIENTE" not found; SQL statement:
+INSERT INTO Cadastro_Cliente (CADID, CadNome, CadEnd, CadTelefone, CadEstadoCivil) VALUES (?, ?, ?, ?, ?) [42102-191]

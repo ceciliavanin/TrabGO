@@ -134,6 +134,11 @@ public class Cliente {
 		return "Cliente [id=" + Cadid + ", nome=" + nomeCliente +", end=" + end + ", telefone="+ telefone + ", estadocivil" + estadocivil +"]";
 	}
 
+	public void setEstadoCivil(EstadoCivil casado) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
 
 
