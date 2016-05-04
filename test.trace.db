@@ -59,3 +59,17 @@ SELECT * FROM Cadastro_Cliente; [90001-191]
 	at br.univel.trabalho.Main.main(Main.java:97)
 2016-05-04 19:58:40 jdbc[8]: exception
 org.h2.jdbc.JdbcSQLException: Data conversion error converting "CASADO" [22018-191]
+2016-05-04 20:03:49 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "CASADO" [22018-191]
+2016-05-04 20:13:11 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Column "id" not found [42122-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3129)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3217)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:339)
+	at br.univel.trabalho.ImpDao.listarTodos(ImpDao.java:100)
+	at br.univel.trabalho.Main.listaTodos(Main.java:79)
+	at br.univel.trabalho.Main.<init>(Main.java:18)
+	at br.univel.trabalho.Main.main(Main.java:97)

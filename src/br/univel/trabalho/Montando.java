@@ -157,7 +157,7 @@ public class Montando extends SQLGen {
 	}
 
 	@Override
-	protected PreparedStatement getSqlInsert(Connection con, Object obj) {
+	protected PreparedStatement getSqlInsert(Connection con, Object obj) throws SecurityException {
 
 		Class<? extends Object> cl = obj.getClass();
 
@@ -234,9 +234,12 @@ public class Montando extends SQLGen {
 				} else if (field.getType().equals(String.class)) {
 					ps.setString(i + 1, String.valueOf(field.get(obj)));
 
-				} else if (field.getType().equals(EstadoCivil.class)) {
-					ps.setString(i + 1, String.valueOf(field.get(obj)));
-				} else {
+				} else if (field.getType().isEnum()) {
+                    Object valor = field.get(obj);
+                    Method m = valor.getClass().getMethod("ordinal");
+                    ps.setInt(i + 1, (Integer) m.invoke(valor, null));
+				                
+					} else {
 					throw new RuntimeException("Tipo não suportado, falta implementar.");
 
 				}
@@ -248,7 +251,9 @@ public class Montando extends SQLGen {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
-
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+			return null;
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 			return null;
@@ -257,6 +262,9 @@ public class Montando extends SQLGen {
 			e.printStackTrace();
 			return null;
 
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+			return null;
 		}
 		
 	}
@@ -286,8 +294,9 @@ public class Montando extends SQLGen {
 
 		PreparedStatement ps = null;
 		try {
+			
 			ps = con.prepareStatement(strSql);
-			int res = ps.executeUpdate();
+		//	int res = ps.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -354,7 +363,7 @@ public class Montando extends SQLGen {
 			PreparedStatement ps = null;
 			try {
 				ps = con.prepareStatement(strSql);
-				int res = ps.executeUpdate();
+			//	int res = ps.executeUpdate();
 
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -403,7 +412,7 @@ public class Montando extends SQLGen {
 
             sb.append(nomecoluna).append(" = ?");
         }
-        sb.append(" WHERE ID = ").append(id);
+        sb.append(" WHERE CADID = ").append(id);
         String update = sb.toString();
         System.out.println(update);
 
@@ -457,7 +466,7 @@ public class Montando extends SQLGen {
                 nometabela = cl.getSimpleName().toUpperCase();
             }
 
-            sb.append("DELETE FROM ").append(nometabela).append(" WHERE ID = ").append(id).append(";");
+            sb.append("DELETE FROM ").append(nometabela).append(" WHERE CADID = ").append(id).append(";");
             String exc = sb.toString();
             System.out.println(exc);
 
