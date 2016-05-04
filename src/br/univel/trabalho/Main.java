@@ -31,7 +31,8 @@ public class Main {
 
     public void criaTabela() throws SQLException {
         Montando ex = new Montando();
-        Connection con = ex.Conexao();
+        Conexao c = new Conexao();
+        Connection con = c.getConnection();
         PreparedStatement ps = con.prepareStatement(ex.getCreateTable(new Cliente()));
 		
 		int res = ps.executeUpdate();
@@ -40,7 +41,8 @@ public class Main {
 
     public void deletaTabela() throws SQLException {
         Montando ex = new Montando();
-        Connection con = ex.Conexao();
+        Conexao c = new Conexao();
+        Connection con = c.getConnection();
         PreparedStatement ps = con.prepareStatement(ex.getDropTable(new Cliente()));
         int res = ps.executeUpdate();
     }

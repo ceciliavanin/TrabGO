@@ -15,13 +15,15 @@ public class ImpDao implements Dao<Cliente, Integer> {
 	private PreparedStatement ps;
     private ResultSet resultado;
     private Montando ex = new Montando();
-    private Connection con = ex.Conexao();
+    private Conexao c = new Conexao();
+    private Connection con = c.getConnection();
 
     private List<Cliente> lista;
 	@Override
 	
 	public void salvar(Cliente c) {
          try {
+        	 
         	ps = ex.getSqlInsert(con, c);
 			ps.executeUpdate();
 			ps.close();

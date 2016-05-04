@@ -221,7 +221,7 @@ public class Montando extends SQLGen {
 		
 		try {
 			PreparedStatement ps = con.prepareStatement(strSql);
-			int res = ps.executeUpdate();
+			//int res = ps.executeUpdate();
 
 			for (int i = 0; i < atributos.length; i++) {
 				Field field = atributos[i];

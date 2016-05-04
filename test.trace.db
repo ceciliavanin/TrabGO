@@ -13,3 +13,49 @@ INSERT INTO Cadastro_Cliente (CADID, CadNome, CadEnd, CadTelefone, CadEstadoCivi
 2016-05-03 21:09:16 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Table "CADASTRO_CLIENTE" not found; SQL statement:
 INSERT INTO Cadastro_Cliente (CADID, CadNome, CadEnd, CadTelefone, CadEstadoCivil) VALUES (?, ?, ?, ?, ?) [42102-191]
+2016-05-04 19:54:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CADASTRO_CLIENTE" already exists; SQL statement:
+CREATE TABLE Cadastro_Cliente (
+	CADID INT,
+	CadNome VARCHAR(100),
+	CadEnd VARCHAR(80),
+	CadTelefone VARCHAR(11),
+	CadEstadoCivil VARCHAR(20),
+	PRIMARY KEY( CADID )
+); [42101-191]
+2016-05-04 19:57:34 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+INSERT INTO Cadastro_Cliente (CADID, CadNome, CadEnd, CadTelefone, CadEstadoCivil) VALUES (?, ?, ?, ?, ?) [90012-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:81)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:164)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:97)
+	at org.h2.command.Command.executeUpdate(Command.java:258)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:160)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:146)
+	at br.univel.trabalho.Montando.getSqlInsert(Montando.java:224)
+	at br.univel.trabalho.ImpDao.salvar(ImpDao.java:27)
+	at br.univel.trabalho.Main.salva(Main.java:52)
+	at br.univel.trabalho.Main.<init>(Main.java:14)
+	at br.univel.trabalho.Main.main(Main.java:97)
+2016-05-04 19:58:40 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Method is not allowed for a query. Use execute or executeQuery instead of executeUpdate; SQL statement:
+SELECT * FROM Cadastro_Cliente; [90001-191]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.Prepared.update(Prepared.java:201)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:98)
+	at org.h2.command.Command.executeUpdate(Command.java:258)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:160)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:146)
+	at br.univel.trabalho.Montando.getSqlSelectAll(Montando.java:290)
+	at br.univel.trabalho.ImpDao.listarTodos(ImpDao.java:94)
+	at br.univel.trabalho.Main.listaTodos(Main.java:79)
+	at br.univel.trabalho.Main.<init>(Main.java:18)
+	at br.univel.trabalho.Main.main(Main.java:97)
+2016-05-04 19:58:40 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "CASADO" [22018-191]
