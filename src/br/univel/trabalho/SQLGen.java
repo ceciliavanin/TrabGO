@@ -2,6 +2,7 @@ package br.univel.trabalho;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public abstract class SQLGen {
 
@@ -22,6 +23,31 @@ public abstract class SQLGen {
 		protected abstract PreparedStatement getSqlUpdateById(Connection con, Object obj);
 
 		protected abstract PreparedStatement getSqlDeleteById(Connection con, Object obj);
+
+		protected String getCreateTable(Object obj) throws SQLException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		protected String getDropTable(Object obj) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		protected PreparedStatement getSqlSelectById(Connection con, Object obj, int id) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		protected PreparedStatement getSqlUpdateById(Connection con, Object obj, int id) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		protected PreparedStatement getSqlDeleteById(Connection con, Object obj, int id) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 
 		}
 
